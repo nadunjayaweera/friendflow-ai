@@ -302,4 +302,14 @@ textarea:focus {
     padding: 20px;
     border-radius: 18px;
   }
+
+  .error-message {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #fee2e2;
+    color: #b91c1c;
+    font-size: 14px;
+    font-weight: 600;
+  }
 }

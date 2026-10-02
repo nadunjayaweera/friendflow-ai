@@ -4,34 +4,39 @@ import "./App.css";
 function App() {
   const [note, setNote] = useState("");
   const [tasks, setTasks] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleOrganize = () => {
+  const handleOrganize = async () => {
     if (!note.trim()) return;
 
-    // Temporary fake AI response
-    setTasks([
-      {
-        id: 1,
-        title: "Call Kasun about the meeting",
-        dueDate: "Tomorrow",
-        priority: "High",
-        completed: false,
-      },
-      {
-        id: 2,
-        title: "Send the supplier invoice",
-        dueDate: "Today",
-        priority: "Medium",
-        completed: false,
-      },
-      {
-        id: 3,
-        title: "Buy printer paper",
-        dueDate: "This week",
-        priority: "Low",
-        completed: false,
-      },
-    ]);
+    try {
+      setLoading(true);
+      setError("");
+
+      const response = await fetch("http://localhost:5000/api/organize", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          note,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Failed to organize tasks");
+      }
+
+      setTasks(data.tasks || []);
+    } catch (err) {
+      console.error(err);
+      setError(err.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const toggleTask = (id) => {
@@ -59,7 +64,7 @@ function App() {
 
         <section className="hero-card">
           <div className="privacy-note">
-            🔒 Your notes stay private and are processed locally.
+            Your notes stay private and are processed locally.
           </div>
 
           <label htmlFor="note">What's on your mind?</label>
@@ -75,10 +80,11 @@ function App() {
           <button
             className="organize-button"
             onClick={handleOrganize}
-            disabled={!note.trim()}
+            disabled={!note.trim() || loading}
           >
-            ✨ Organize with AI
+            {loading ? "Organizing..." : "Organize with AI"}
           </button>
+          {error && <div className="error-message">{error}</div>}
         </section>
 
         <section className="tasks-section">

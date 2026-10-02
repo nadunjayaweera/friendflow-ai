@@ -312,4 +312,84 @@ textarea:focus {
     font-size: 14px;
     font-weight: 600;
   }
+
+  .history-section {
+    margin-top: 24px;
+  }
+
+  .history-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .clear-history-button {
+    border: 1px solid #e4e4e7;
+    background: white;
+    color: #71717a;
+    border-radius: 9px;
+    padding: 7px 11px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .clear-history-button:hover {
+    background: #f4f4f5;
+    color: #18181b;
+  }
+
+  .completed-icon {
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    background: #18181b;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .history-card {
+    position: relative;
+  }
+
+  .history-card h3 {
+    text-decoration: line-through;
+  }
+
+  .completed-date {
+    color: #a1a1aa;
+  }
+
+  .delete-history-button {
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #a1a1aa;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .delete-history-button:hover {
+    background: #fee2e2;
+    color: #b91c1c;
+  }
+
+  .check-button:disabled {
+    cursor: wait;
+    opacity: 0.6;
+  }
+
+  @media (max-width: 640px) {
+    .history-actions {
+      align-items: flex-end;
+      flex-direction: column;
+    }
+  }
 }

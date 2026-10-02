@@ -1,29 +1,38 @@
 {
-  "active": [],
-  "completed": [
+  "active": [
     {
-      "id": "1790967333263-2",
-      "title": "Buy medicine",
+      "id": "1790969506204-2",
+      "title": "Buy printer paper",
       "dueDate": "This week",
       "priority": "Low",
-      "createdAt": "2026-10-02T18:55:33.263Z",
-      "completedAt": "2026-10-02T18:56:02.065Z"
+      "createdAt": "2026-10-02T19:31:46.204Z",
+      "completedAt": null
     },
     {
-      "id": "1790967333263-1",
-      "title": "Call mother",
-      "dueDate": "No date",
+      "id": "1790969506204-3",
+      "title": "Remind Amal about quotation",
+      "dueDate": "This week",
+      "priority": "Low",
+      "createdAt": "2026-10-02T19:31:46.204Z",
+      "completedAt": null
+    }
+  ],
+  "completed": [
+    {
+      "id": "1790969506204-1",
+      "title": "Call Kasun about meeting",
+      "dueDate": "Tomorrow",
       "priority": "Medium",
-      "createdAt": "2026-10-02T18:55:33.263Z",
-      "completedAt": "2026-10-02T18:55:55.310Z"
+      "createdAt": "2026-10-02T19:31:46.204Z",
+      "completedAt": "2026-10-02T19:33:36.114Z"
     },
     {
-      "id": "1790967333263-0",
-      "title": "Send quotation to Nimal",
+      "id": "1790969506204-0",
+      "title": "Send project report to Nimal",
       "dueDate": "Today",
       "priority": "High",
-      "createdAt": "2026-10-02T18:55:33.263Z",
-      "completedAt": "2026-10-02T18:55:40.678Z"
+      "createdAt": "2026-10-02T19:31:46.204Z",
+      "completedAt": "2026-10-02T19:33:34.664Z"
     }
   ]
 }
